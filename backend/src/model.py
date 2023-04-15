@@ -62,7 +62,7 @@ def train(images, labels, verbose=False):
     return mu_hat, sigma_hat
 
 
-def test(images, labels, mean, cov, threshold, verbose=False):
+def evaluate(images, labels, mean, cov, threshold, verbose=False):
     tp, fp, fn, tn = 0, 0, 0, 0
     cov_det = np.linalg.det(cov)
     cov_inv = np.linalg.inv(cov)
