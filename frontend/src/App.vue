@@ -1,11 +1,10 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-import NavBar from './components/NavBar.vue'
-import Hero from './components/Hero.vue'
-import GetStarted from './components/GetStarted.vue'
-import ConfirmImage from './components/ConfirmImage.vue'
-import Footer from './components/Footer.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import TheWelcome from './components/TheWelcome.vue';
+import NavBar from './components/NavBar.vue';
+import Hero from './components/Hero.vue';
+import MainContainer from './components/MainContainer.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -20,8 +19,7 @@ import Footer from './components/Footer.vue'
   <main>
     <NavBar />
     <Hero />
-    <GetStarted />
-    <ConfirmImage />
+    <MainContainer />
     <Footer />
     <!-- <TheWelcome /> -->
   </main>
