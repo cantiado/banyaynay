@@ -8,8 +8,10 @@ module.exports = {
     extend: {
       colors: {
         // 'unripe-green': '#46b04f',
-        'unripe-green': '#FCD58B',
+        'pastel-orange': '#FCD58B',
         //'unripe-green': '#feda00',
+        'orange': '#ffa200',
+        'dark-gray': '#262626',
         'mellow-yellow': '#f7f6c5',
         'another-yellow': '#FEEF92',
         'magenta': '#d81e5b',
