@@ -4,6 +4,7 @@ import TheWelcome from './components/TheWelcome.vue'
 import NavBar from './components/NavBar.vue'
 import Hero from './components/Hero.vue'
 import GetStarted from './components/GetStarted.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
@@ -19,6 +20,7 @@ import GetStarted from './components/GetStarted.vue'
     <NavBar />
     <Hero />
     <GetStarted />
+    <Footer />
     <!-- <TheWelcome /> -->
   </main>
 </template>
