@@ -12,9 +12,11 @@ module.exports = {
         //'unripe-green': '#feda00',
         'orange': '#ffa200',
         'dark-gray': '#262626',
-        'mellow-yellow': '#f7f6c5',
+        //'mellow-yellow': '#f7f6c5',
+        'mellow-yellow': '#fffae8',
         'another-yellow': '#FEEF92',
-        'magenta': '#d81e5b',
+        // 'magenta': '#d81e5b',
+        'magenta': '#F8709D',
         'pink': '#CE5E84',
       },
       backgroundImage: {

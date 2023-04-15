@@ -7,7 +7,7 @@ import ClassifiedResult from './ClassifiedResult.vue';
 </script>
 
 <template>
-    <div class="h-screen w-screen grid grid-cols-1 fliex items-stretch bg-mellow-yellow p-5 pt-10">
+    <div id="main-container" class="h-screen w-screen grid grid-cols-1 fliex items-stretch bg-mellow-yellow p-5 pt-10">
         <!-- Component views go here -->
         <!-- <GetStarted /> -->
         <!-- <UploadImage /> -->
