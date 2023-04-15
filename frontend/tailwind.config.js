@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'unripe-green': '#d9f99d',
+        'mellow-yellow': '#FEEF92',
       },
       backgroundImage: {
         'yellow-bananas': "url('./src/assets/yellow-banana-bg.jpg')",

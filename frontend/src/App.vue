@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import NavBar from './components/NavBar.vue'
 import Hero from './components/Hero.vue'
+import GetStarted from './components/GetStarted.vue'
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import Hero from './components/Hero.vue'
   <main>
     <NavBar />
     <Hero />
+    <GetStarted />
     <!-- <TheWelcome /> -->
   </main>
 </template>
