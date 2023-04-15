@@ -11,7 +11,8 @@ import ClassifiedResult from './ClassifiedResult.vue';
         <!-- Component views go here -->
         <!-- <GetStarted /> -->
         <!-- <UploadImage /> -->
+        <!-- <ConfirmImage /> -->
         <!-- <LoadingView /> -->
-        <ConfirmImage />
+        <ClassifiedResult />
     </div>
 </template>
