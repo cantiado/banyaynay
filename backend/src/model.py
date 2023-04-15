@@ -1,4 +1,5 @@
 import cv2
+import json
 import numpy as np
 import os
 from pprint import pprint
@@ -11,6 +12,14 @@ def load_images(dir_name):
         if os.path.isfile(fpath):
             images.append(cv2.imread(fpath))
     return images
+
+
+def load_params(fpath):
+    with open(fpath, "r") as fin:
+        params = json.load(fin)
+    params["mean"] = np.array(params["mean"])
+    params["cov"] = np.array(params["cov"])
+    return params
 
 
 def chromatic(bgr):
