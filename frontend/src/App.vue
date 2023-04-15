@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import NavBar from './components/NavBar.vue'
+import Hero from './components/Hero.vue'
 </script>
 
 <template>
@@ -15,7 +16,8 @@ import NavBar from './components/NavBar.vue'
 
   <main>
     <NavBar />
-    <TheWelcome />
+    <Hero />
+    <!-- <TheWelcome /> -->
   </main>
 </template>
 
