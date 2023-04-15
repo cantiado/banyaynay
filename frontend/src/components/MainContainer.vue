@@ -15,7 +15,7 @@ function uploadImage(file) {
 </script>
 
 <template>
-  <div class="h-screen w-full bg-mellow-yellow p-10">
+  <div id="main-container" class="h-screen w-full bg-mellow-yellow p-10">
     <!-- Component views go here -->
     <!-- <GetStarted v-if="index == 0" /> -->
     <UploadImage v-if="index == 0" @submit="uploadImage" />
