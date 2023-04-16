@@ -42,22 +42,22 @@ function newImage() {
 
 <template>
   <div class="p-5 flex flex-col justify-between">
-    <div>
-      <h2 class="text-4xl">Your picture has been banyaynay-ified!</h2>
-    </div>
-    <div class="justify-center">
-      <div class="flex justify-center">
-        <!-- <ImageContainer path="../assets/b1.jpg" /> -->
-        <img v-if="imgSrc" :src="imgSrc" alt="result of user uploaded image" />
-        <div
-          v-else
-          class="m-20 px-10 py-5 bg-white/20 border-4 border-dashed rounded-xl flex flex-row justify-center items-center text-4xl"
-        >
-          Oops! It seems an error occured somewhere. Better luck next time ;P
-        </div>
+    <h2 class="text-4xl mb-5">Your picture has been banyaynay-ified!</h2>
+    <div class="h-[65vh] flex justify-center">
+      <img
+        v-if="imgSrc"
+        :src="imgSrc"
+        class="h-full"
+        alt="result of user uploaded image"
+      />
+      <div
+        v-else
+        class="m-20 px-10 py-5 bg-white/20 border-4 border-dashed rounded-xl flex flex-row justify-center items-center text-4xl"
+      >
+        Oops! It seems an error occured somewhere. Better luck next time ;P
       </div>
     </div>
-    <div class="flex justify-between">
+    <div class="mt-5 flex justify-between">
       <button
         @click="newImage"
         type="button"
