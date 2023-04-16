@@ -100,7 +100,7 @@ def evaluate(images, labels, mean, cov, threshold, verbose=False):
     return tp, fp, fn, tn
 
 
-def classify(images, mean, cov, threshold):
+def classify(images, mean, cov, threshold, silhouette=False):
     results = []
     cov_det = np.linalg.det(cov)
     cov_inv = np.linalg.inv(cov)
@@ -112,7 +112,10 @@ def classify(images, mean, cov, threshold):
                 pixel = chromatic(image[row, col])
                 likelihood = dnorm(pixel, mean, cov_det, cov_inv)[0, 0]
                 if likelihood > threshold*norm:
-                    result[row, col] = image[row, col]
+                    if silhouette:
+                        result[row, col] = [255, 255, 255]
+                    else:
+                        result[row, col] = image[row, col]
                     # print(image[row, col], result[row, col])
                 # else:
                 #     result[row, col] = [0, 0, 0]

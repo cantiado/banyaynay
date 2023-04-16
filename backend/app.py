@@ -46,12 +46,16 @@ def upload():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            params = model.load_params(os.path.join(config.DIR_BIN, "parameters.json"))
-            image = [cv2.imread(os.path.join(app.config['UPLOAD_FOLDER'], filename))]
-            result = model.classify(image, params["mean"], params["cov"], params["threshold"])[0]
+            params = model.load_params(os.path.join(
+                config.DIR_BIN, "parameters.json"))
+            image = [cv2.imread(os.path.join(
+                app.config['UPLOAD_FOLDER'], filename))]
+            result = model.classify(
+                image, params["mean"], params["cov"], params["threshold"], silhouette=False)[0]
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             result_fname = "_res.".join(filename.rsplit("."))
-            cv2.imwrite(os.path.join(app.config["RESULT_FOLDER"], result_fname), result)
+            cv2.imwrite(os.path.join(
+                app.config["RESULT_FOLDER"], result_fname), result)
             return jsonify({"fname": result_fname})
             # return jsonify({"path": os.path.join(app.config["RESULT_FOLDER"], result_fname)})
             # return os.path.join(app.config["RESULT_FOLDER"], result_fname)
