@@ -72,7 +72,8 @@ def upload():
 @app.route('/upload/<name>')
 def download_file(name):
     # return jsonify({"path": os.path.join(app.config["RESULT_FOLDER"], name)})
-    return send_from_directory(app.config["RESULT_FOLDER"], name)
+    # return send_from_directory(app.config["RESULT_FOLDER"], name)
+    return send_file(os.path.join(app.config["RESULT_FOLDER"], name), as_attachment=True)
 
 
 if __name__ == "__main__":
