@@ -1,6 +1,7 @@
 import cv2
 import os
-from flask import Flask, flash, request, redirect, send_from_directory, url_for
+from flask import Flask, flash, jsonify, request, redirect, send_file, send_from_directory, url_for
+from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
 
 import src.config as config
@@ -11,8 +12,10 @@ RESULT_FOLDER = "results"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 app = Flask(__name__)
+CORS(app)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["RESULT_FOLDER"] = RESULT_FOLDER
+app.config["CORS_HEADERS"] = "Content-Type"
 app.secret_key = os.urandom(24)
 
 
@@ -27,13 +30,14 @@ def allowed_file(filename):
 
 
 @app.route("/upload", methods=["GET", "POST"])
+@cross_origin()
 def upload():
     if request.method == 'POST':
         # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
+        if 'image' not in request.files:
+            flash('No image part')
             return redirect(request.url)
-        file = request.files['file']
+        file = request.files['image']
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
@@ -48,7 +52,12 @@ def upload():
             os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             result_fname = "_res.".join(filename.rsplit("."))
             cv2.imwrite(os.path.join(app.config["RESULT_FOLDER"], result_fname), result)
-            return redirect(url_for('download_file', name=result_fname))
+            return jsonify({"fname": result_fname})
+            # return jsonify({"path": os.path.join(app.config["RESULT_FOLDER"], result_fname)})
+            # return os.path.join(app.config["RESULT_FOLDER"], result_fname)
+            # return send_file(os.path.join(app.config["RESULT_FOLDER"], result_fname), as_attachment=True)
+            # return redirect(url_for('download_file', name=result_fname))
+            # return send_from_directory(app.config["RESULT_FOLDER"], result_fname)
     return '''
     <!doctype html>
     <title>Upload new File</title>
@@ -62,6 +71,7 @@ def upload():
 
 @app.route('/upload/<name>')
 def download_file(name):
+    # return jsonify({"path": os.path.join(app.config["RESULT_FOLDER"], name)})
     return send_from_directory(app.config["RESULT_FOLDER"], name)
 
 
