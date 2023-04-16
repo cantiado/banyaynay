@@ -48,7 +48,7 @@ function newImage() {
     <div class="justify-center">
       <div class="flex justify-center">
         <!-- <ImageContainer path="../assets/b1.jpg" /> -->
-        <img v-if="imgSrc" :src="imgSrc" />
+        <img v-if="imgSrc" :src="imgSrc" alt="result of user uploaded image" />
         <div
           v-else
           class="h-full w-full bg-white/20 border-4 border-dashed rounded-xl flex flex-row justify-center items-center text-4xl"

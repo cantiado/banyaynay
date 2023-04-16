@@ -66,8 +66,8 @@ function submit() {
     <button
       @click="submit"
       type="button"
-      class="rounded-md bg-magenta w-fit h-fit px-5 py-3 text-xl"
-      :class="{ 'bg-gray-400': !fileUploaded }"
+      class="rounded-md w-fit h-fit px-5 py-3 text-xl"
+      :class="!fileUploaded ? 'bg-gray-400' : 'bg-magenta'"
       :disabled="!fileUploaded"
     >
       Submit
