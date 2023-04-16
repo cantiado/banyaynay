@@ -1,0 +1,5 @@
+DIR_TRAIN = "train"
+DIR_VAL = "val"
+DIR_IMG = "img"
+DIR_LAB = "label"
+DIR_BIN = "bin"
