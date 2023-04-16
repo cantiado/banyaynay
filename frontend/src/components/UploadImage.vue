@@ -28,7 +28,7 @@ function submit() {
 
 <template>
   <div class="h-full flex flex-col justify-start gap-5 items-center">
-    <h2 class="text-2xl mb-5 self-start">Image upload</h2>
+    <h2 class="text-4xl mb-5 self-start">Image upload</h2>
     <div class="w-full">
       <label
         class="flex flex-row items-center border border-gray-900 rounded-lg bg-gray-50 cursor-pointer"
@@ -48,10 +48,10 @@ function submit() {
         name="file-input"
       />
       <p
-        class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+        class="mt-1 text-sm text-gray-600 dark:text-gray-300"
         id="file_input_help"
       >
-        PNG and JPEG only
+      Accepted image formats: PNG, JPEG
       </p>
     </div>
     <div class="h-1/2 w-full flex flex-row justify-center items-center">
@@ -66,7 +66,7 @@ function submit() {
     <button
       @click="submit"
       type="button"
-      class="mt-5 rounded-md bg-pink border-black border-2 w-fit h-fit px-5 py-2"
+      class="rounded-md bg-magenta w-fit h-fit px-5 py-3 text-xl"
       :class="{ 'bg-gray-400': !fileUploaded }"
       :disabled="!fileUploaded"
     >
