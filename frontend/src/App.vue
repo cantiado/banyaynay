@@ -4,7 +4,9 @@ import TheWelcome from './components/TheWelcome.vue';
 import NavBar from './components/NavBar.vue';
 import Hero from './components/Hero.vue';
 import MainContainer from './components/MainContainer.vue';
+import AboutSection from './components/AboutSection.vue';
 import Footer from './components/Footer.vue';
+
 </script>
 
 <template>
@@ -20,6 +22,7 @@ import Footer from './components/Footer.vue';
     <NavBar />
     <Hero />
     <MainContainer />
+    <!-- <AboutSection /> -->
     <Footer />
     <!-- <TheWelcome /> -->
   </main>
