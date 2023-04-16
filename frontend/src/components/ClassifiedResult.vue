@@ -43,7 +43,7 @@ function newImage() {
 <template>
   <div class="p-5 flex flex-col justify-between">
     <div>
-      <h2 class="text-2xl">Your picture has been banyaynay-ified!</h2>
+      <h2 class="text-4xl">Your picture has been banyaynay-ified!</h2>
     </div>
     <div class="justify-center">
       <div class="flex justify-center">
@@ -51,7 +51,7 @@ function newImage() {
         <img v-if="imgSrc" :src="imgSrc" alt="result of user uploaded image" />
         <div
           v-else
-          class="h-full w-full bg-white/20 border-4 border-dashed rounded-xl flex flex-row justify-center items-center text-4xl"
+          class="m-20 px-10 py-5 bg-white/20 border-4 border-dashed rounded-xl flex flex-row justify-center items-center text-4xl"
         >
           Oops! It seems an error occured somewhere. Better luck next time ;P
         </div>
@@ -61,7 +61,7 @@ function newImage() {
       <button
         @click="newImage"
         type="button"
-        class="mt-5 rounded-md bg-pink border-black border-2 w-fit h-fit px-5 py-2"
+        class="rounded-md w-fit h-fit px-5 py-3 text-xl bg-magenta"
       >
         New image
       </button>
@@ -69,7 +69,7 @@ function newImage() {
         <button
           @click="confirmDownloaded"
           type="button"
-          class="mt-5 rounded-md bg-pink border-black border-2 w-fit h-fit px-5 py-2"
+          class="rounded-md w-fit h-fit px-5 py-3 text-xl bg-magenta"
         >
           Download
         </button>
